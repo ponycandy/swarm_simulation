@@ -10,6 +10,7 @@ class Simer : public QThread
 public:
     explicit Simer(QObject *parent = nullptr);
     void run() override;
+    void stepin();
     Simer(double t);
     double dt;
     ODE_functor *functor;

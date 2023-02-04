@@ -21,6 +21,7 @@ void Simer::run()
         {
             QElapsedTimer et;
             et.start();
+
             functor->ode_function(act_array,state_array);
             functor->sensor(state_array);
             functor->broad_cast(state_array,act_array,sensor_data);
@@ -32,6 +33,14 @@ void Simer::run()
             }
         }while (1);
     }
+}
+
+void Simer::stepin()
+{
+    functor->control(sensor_data,state_array);
+    functor->ode_function(act_array,state_array);
+    functor->sensor(state_array);
+    functor->broad_cast(state_array,act_array,sensor_data);
 }
 
 Simer::Simer(double t)

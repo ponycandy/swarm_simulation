@@ -15,10 +15,27 @@ void SimulatorManager::set_delta_t(double delta_t)
 
 void SimulatorManager::start_sim()
 {
-    m_sim->run();
+    if(step_in_mode_flag==0)
+    {
+        m_sim->run();
+    }
+    else
+    {
+//do nothing wait for the step in
+    }
 }
 
 void SimulatorManager::set_ODE(ODE_functor *functor)
 {
     m_sim->functor=functor;
+}
+
+void SimulatorManager::step_in()
+{
+    m_sim->stepin();
+}
+
+void SimulatorManager::set_step_in_mode(int flag)
+{
+    step_in_mode_flag=1;
 }

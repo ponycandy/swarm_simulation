@@ -11,6 +11,8 @@ public:
     virtual void set_delta_t(double delta_t)=0;
     virtual void start_sim()=0;
     virtual void set_ODE(ODE_functor *functor)=0;
+    virtual void step_in()=0;
+    virtual void set_step_in_mode(int flag)=0;
 
 };
 #define SimDynamicsservice_iid "SimDynamicsservice"

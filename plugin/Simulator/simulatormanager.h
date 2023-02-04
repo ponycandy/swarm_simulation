@@ -13,8 +13,11 @@ public:
     void set_delta_t(double delta_t) override;
     void start_sim() override;
     void set_ODE(ODE_functor *functor) override;
+    void step_in() override;
+    void set_step_in_mode(int flag) override;
 
     double delt_t;
+    int step_in_mode_flag=0;
     Simer *m_sim;
 
 signals:
