@@ -14,6 +14,7 @@ void SimulatorActivator::init(PluginContext *CONTEXT)
 void SimulatorActivator::start()
 {
     m_sim=new SimulatorManager;
+    SimulatorActivator::registerservice(m_sim,"SimDynamicsservice");
 }
 void SimulatorActivator::stop()
 {

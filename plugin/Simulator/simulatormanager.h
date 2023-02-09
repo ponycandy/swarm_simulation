@@ -15,6 +15,7 @@ public:
     void set_ODE(ODE_functor *functor) override;
     void step_in() override;
     void set_step_in_mode(int flag) override;
+    SimDynamicsservice* cloneservice() override;
 
     double delt_t;
     int step_in_mode_flag=0;

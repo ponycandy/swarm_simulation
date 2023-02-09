@@ -4,7 +4,7 @@ SimulatorManager::SimulatorManager(QObject *parent) : QObject(parent)
 {
     delt_t=30;//ms
     m_sim=new Simer(delt_t);
-    SimulatorActivator::registerservice(this,"SimDynamicsservice");
+
 }
 
 void SimulatorManager::set_delta_t(double delta_t)
@@ -38,4 +38,10 @@ void SimulatorManager::step_in()
 void SimulatorManager::set_step_in_mode(int flag)
 {
     step_in_mode_flag=1;
+}
+
+SimDynamicsservice *SimulatorManager::cloneservice()
+{
+    SimulatorManager *new_service=new SimulatorManager;
+    return new_service;
 }

@@ -13,6 +13,7 @@ public:
     virtual void set_ODE(ODE_functor *functor)=0;
     virtual void step_in()=0;
     virtual void set_step_in_mode(int flag)=0;
+    virtual SimDynamicsservice* cloneservice()=0;
 
 };
 #define SimDynamicsservice_iid "SimDynamicsservice"
